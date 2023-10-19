@@ -38,7 +38,7 @@ const storage = multer.diskStorage({
     },
     filename:(req, file, fn) => {
         // console.log(req.body)
-        console.log(file)
+        // console.log(file)
         fn(null, req.body.img)
         // fn(null, file.originalname)
     }
