@@ -11,7 +11,7 @@ import { URL } from "../url";
 const CreatePost = () => {
   const navigate = useNavigate()
   const { user } = useContext(UserContext)
-  console.log(user)
+  // console.log(user)
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [file, setFile] = useState(null);
@@ -50,7 +50,7 @@ const CreatePost = () => {
     }
 
     //POST UPLOAD
-    console.log(post)
+    // console.log(post)
     try {
       const res = await axios.post(URL+"/api/posts/create",post, {withCredentials:true})
       // console.log(res);
