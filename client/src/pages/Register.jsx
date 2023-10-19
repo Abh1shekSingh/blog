@@ -13,7 +13,7 @@ const Register = () => {
   const handleRegister = async() => {
     try {
       const res = await axios.post(URL+"/api/auth/register", {username, email, password})
-      // console.log(res);
+      console.log(res);
       setUsername(res.data.username)
       setEmail(res.data.email)
       setPassword(res.data.password)
