@@ -1,0 +1,39 @@
+:root{
+    --bg:white;
+    --textColor:black;
+    --softBg:#f0f0f0;
+    --softTextColor:#626262
+}
+
+.light {
+    --bg:#0f172a;
+    --textColor:#ddd;
+    --softBg:#1f273a;
+    --softTextColor:#a6a6a6
+}
+
+
+.light {
+    background-color: var(--bg);
+    color: var(--textColor);
+}
+
+input:checked ~ .dot {
+    transform: translateX(100%);
+    background-color: #48bb78;
+}
+
+.ql-container {
+    font-size: 25px !important;
+    font-family: 'Merriweather' !important;
+}
+
+.quill > .ql-container > .ql-editor.ql-blank::before {
+    color:#b3b3b1
+}
+
+@media only screen and (max-width: 600px) {
+    .ql-container {
+        font-size: 18px !important;
+    }
+}
