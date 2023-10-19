@@ -10,7 +10,7 @@ import Loader from "../components/Loader"
 import { UserContext } from "../context/userContext"
 import Instagram from "../assets/instagramLogo.svg"
 import LinkedIn from "../assets/linkedinLogo.svg"
-import Leetcode from "../assets/leetcodeLogo.svg"
+// import Leetcode from "../assets/leetcodeLogo.svg"
 
 const Home = () => {
 
@@ -63,7 +63,7 @@ This shorter introduction conveys the essence of your blog, inviting visitors to
             <div className="flex gap-2">
               <Link to="https://www.instagram.com/_abh1sheksingh/"><img className="w-[25px] rounded cursor-pointer" src={Instagram} alt="instagram_logo"/></Link>
               <Link to="https://www.linkedin.com/in/craftingbugs/"><img className="w-[25px] rounded cursor-pointer" src={LinkedIn} alt="linkedin_logo"/></Link>
-              <Link to="https://leetcode.com/abhishek210702/"><img className="w-[25px] rounded cursor-pointer" src={Leetcode} alt="leetcode_logo"/></Link>
+              <Link to="https://leetcode.com/abhishek210702/"><img className="w-[25px] rounded cursor-pointer" src="" alt="leetcode_logo"/></Link>
             </div>
           </div>
         </div>
