@@ -21,12 +21,21 @@ const connectDB = async() => {
     }
 }
 
-app.use(cors({origin:"https://craftzblog.netlify.app/",credentials:true, methods: "GET,HEAD,PUT,PATCH,POST,DELETE" }))
+const corsOptions = {
+    origin: 'http://localhost:5173', 
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    preflightContinue: false,
+    optionsSuccessStatus: 204,
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials:true
+  };
+
+app.use(cors(corsOptions))
 
 app.use((req, res, next) => {
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "https://craftzblog.netlify.app/"
+      "http://localhost:5173"
     );
     res.setHeader(
       "Access-Control-Allow-Methods",
