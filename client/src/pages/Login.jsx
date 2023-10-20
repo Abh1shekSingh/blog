@@ -15,6 +15,7 @@ const Login = () => {
     try {
       const res = await axios.post(URL+"/api/auth/login", {email, password},{withCredentials:true})
       setUser(res.data);
+      console.log(res.data)
       localStorage.setItem('user', res.data);
       navigate("/")
     }catch(err) {
