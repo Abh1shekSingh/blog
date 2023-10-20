@@ -22,7 +22,7 @@ const connectDB = async() => {
 }
 
 const corsOptions = {
-    origin: 'https://craftzblog.vercel.app/', 
+    origin: 'https://craftzblog.vercel.app', 
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     preflightContinue: false,
     optionsSuccessStatus: 204,
@@ -35,7 +35,7 @@ app.use(cors(corsOptions))
 app.use((req, res, next) => {
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "https://craftzblog.vercel.app/"
+      "https://craftzblog.vercel.app"
     );
     res.setHeader(
       "Access-Control-Allow-Methods",
