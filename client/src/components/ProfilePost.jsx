@@ -20,7 +20,7 @@ const ProfilePost = ({post}) => {
             <p className="hidden">{new Date(post?.addedAt).toString().slice(16,21)}</p>
           </div>
         </div>
-        <p className="text-md md:text-md text-[--softTextColor] font-fira font-regular" dangerouslySetInnerHTML={{__html: post?.desc.slice(0,300)+"...Read More"}} />
+        <div className="text-md md:text-md text-[--softTextColor] font-fira font-regular" dangerouslySetInnerHTML={{__html: post?.desc.slice(0,300)+"...Read More"}} />
       </div>
     </div>
   )
