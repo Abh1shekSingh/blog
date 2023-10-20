@@ -36,7 +36,7 @@ router.post('/login', async(req, res) => {
         const token = jwt.sign({_id:user._id, username:user.username, email:user.email}, process.env.SECRET, {expiresIn:"3d"})
         console.log(token)
         const {password,...info} = user._doc
-        res.cookie("token", token).status(200).json(info)
+        res.cookie("token", token,{httpOnly:true, secure:true, sameSite:'none'}).status(200).json(info)
  
     }catch(err) {
         res.status(500).json(err);
