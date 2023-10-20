@@ -52,7 +52,8 @@ const CreatePost = () => {
     //POST UPLOAD
     // console.log(post)
     try {
-      const res = await axios.post(URL+"/api/posts/create",post, {withCredentials:true})
+      const res = await axios.post(URL+"/api/posts/create",post, {withCredentials:true,headers:{"Content-Type":'application/json', Accept:'application/json', 'Access-Control-Allow-Origin':
+      'https://craftzblog.vercel.app',}})
       // console.log(res);
       navigate("/posts/post/"+res.data._id)
       
