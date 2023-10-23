@@ -6,6 +6,7 @@ import { useContext, useState } from "react"
 import Menu from "./Menu"
 import { UserContext } from "../context/userContext"
 import { BsPencilSquare } from 'react-icons/bs'
+import { ImCross } from "react-icons/im"
 const Navbar = () => {
 
   const path = useLocation().pathname
@@ -13,13 +14,26 @@ const Navbar = () => {
   const [prompt, setPrompt] = useState("");
   // console.log(prompt)
   const [menu , setMenu] = useState(false);
+  const [open,setOpen] = useState(true);
   const showMenu = () => {
     setMenu(!menu);
+  }
+
+  const handleClick = () => {
+    setOpen(false);
   }
   const { user } = useContext(UserContext)
   // console.log(user);
   
   return (
+    <>
+    {open && <div className="bg-teal-700 text-white flex items-center justify-evenly p-4 ">
+      <div className="flex items-center justify-center flex-col">
+        <h3 className="font-fira text-xl">If you see continuous loading beneath <b>Recent posts</b> heading, just wait few minutes it will start working!</h3>
+        <p className="text-sm font-fira">I am using free backend service which shuts the server automatically and delete images of the blog after 15 minutes of no traffic</p>
+      </div>
+      <div className="absolute right-7 cursor-pointer" onClick={handleClick}><ImCross /></div>
+    </div>}
     <div className={` flex items-center justify-between px-6 md:px-[200px] py-4`} >
       <h1 className="text-2xl font-extrabold font-bricolage"><Link to="/">CraftzBlogs</Link></h1>
      {path === "/" && <div className="flex justify-center items-center space-x-0">
@@ -41,6 +55,7 @@ const Navbar = () => {
         {menu  && <Menu user = {user} />}
       </div>
     </div>
+    </>
   )
 }
 
