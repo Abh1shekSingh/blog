@@ -27,12 +27,12 @@ const Navbar = () => {
   
   return (
     <>
-    {open && <div className="bg-teal-700 text-white flex items-center justify-evenly p-4 ">
+    {open && <div className="bg-yellow-400 text-white flex items-center gap-10 justify-evenly p-4 ">
       <div className="flex items-center justify-center flex-col">
-        <h3 className="font-fira text-xl">If you see continuous loading beneath <b>Recent posts</b> heading, just wait few minutes it will start working!</h3>
-        <p className="text-sm font-fira">I am using free backend service which shuts the server automatically and delete images of the blog after 15 minutes of no traffic</p>
+        <h3 className="font-fira md:text-xl  text-lg text-black"><strong>NOTE:</strong> Wait 1 - 2 minutes for Server to load before making any query ! </h3>
+        {/* <p className="text-sm md:block hidden font-fira text-black">I am using free backend service which shuts the server automatically and delete images of the blog after 15 minutes of no traffic</p> */}
       </div>
-      <div className="absolute right-7 cursor-pointer" onClick={handleClick}><ImCross /></div>
+      <div className="right-7 cursor-pointer text-black" onClick={handleClick}><ImCross /></div>
     </div>}
     <div className={` flex items-center justify-between px-6 md:px-[200px] py-4`} >
       <h1 className="text-2xl font-extrabold font-bricolage"><Link to="/">CraftzBlogs</Link></h1>
