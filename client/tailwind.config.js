@@ -7,10 +7,8 @@ export default {
   theme: {
     fontFamily: {
       'bricolage': ['Bricolage Grotesque','sans-serif'],
-      'fira': ['Fira Sans', 'sans-serif'], // Ensure fonts with spaces have " " surrounding it.
-      'lato' : ['Lato', 'sans-serif'],
-      'merriweather' : ['Merriweather', 'serif'],
-      'archivo' : ['Archivo Black', 'sans-serif']
+      'fira':['Fira Sans Condensed', 'sans-serif'],
+      'nunito':['Nunito Sans', 'sans-serif']
     },
     extend: {},
   },

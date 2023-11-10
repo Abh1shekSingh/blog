@@ -25,7 +25,7 @@ input:checked ~ .dot {
 
 .ql-container {
     font-size: 25px !important;
-    font-family: 'Merriweather' !important;
+    font-family: 'fira' !important;
 }
 
 .quill > .ql-container > .ql-editor.ql-blank::before {

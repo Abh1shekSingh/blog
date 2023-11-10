@@ -2,7 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom"
 import "../App.css"
 import { BsSearch } from "react-icons/bs"
 import { FaBars } from "react-icons/fa"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import Menu from "./Menu"
 import { UserContext } from "../context/userContext"
 import { BsPencilSquare } from 'react-icons/bs'
@@ -14,20 +14,28 @@ const Navbar = () => {
   const [prompt, setPrompt] = useState("");
   // console.log(prompt)
   const [menu , setMenu] = useState(false);
-  const [open,setOpen] = useState(true);
+  const [showNote,setShowNote] = useState(true);
   const showMenu = () => {
     setMenu(!menu);
   }
 
   const handleClick = () => {
-    setOpen(false);
-  }
+    setShowNote(false);
+    localStorage.setItem('visitedBefore', 'true');
+  };
+
+  useEffect(() => {
+    const hasVisitedBefore = localStorage.getItem('visitedBefore');
+    if (hasVisitedBefore) {
+      setShowNote(false);
+    }
+  }, []);
   const { user } = useContext(UserContext)
   // console.log(user);
   
   return (
     <>
-    {open && <div className="bg-yellow-400 text-white flex items-center gap-10 justify-evenly p-4 ">
+    {showNote && <div className="bg-yellow-400 text-white flex items-center gap-10 justify-evenly p-4 ">
       <div className="flex items-center justify-center flex-col">
         <h3 className="font-fira md:text-xl  text-lg text-black"><strong>NOTE:</strong> Wait 1 - 2 minutes for Server to load before making any query ! </h3>
         {/* <p className="text-sm md:block hidden font-fira text-black">I am using free backend service which shuts the server automatically and delete images of the blog after 15 minutes of no traffic</p> */}

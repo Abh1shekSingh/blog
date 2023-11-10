@@ -23,12 +23,12 @@ const connectDB = async() => {
 
 
 
-app.use(cors({origin:"https://craftzblog.vercel.app", credentials:true}))
+app.use(cors({origin:"http://localhost:5173", credentials:true}))
 
 app.use((req, res, next) => {
     res.setHeader(
       "Access-Control-Allow-Origin",
-      "https://craftzblog.vercel.app"
+      "http://localhost:5173"
     );
     res.setHeader(
       "Access-Control-Allow-Methods",
