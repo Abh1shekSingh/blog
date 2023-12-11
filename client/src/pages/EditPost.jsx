@@ -57,44 +57,39 @@ const EditPost = () => {
     }
   }
 
-  const handleUpdate = async(e) => {
+  const handleUpdate = async (e) => {
     e.preventDefault();
     const post = {
       title,
       desc,
-      username:user.username,
-      userId:user._id,
-      
-    }
-
-    if(file) {
-      const data = new FormData()
-      const filename = Date.now()+file.name 
-      data.append("img", filename)
-      data.append("file", file)
-      post.photo = filename
-      // console.log(data);
+      username: user.username,
+      userId: user._id,
+    };
+  
+    if (file) {
+      const data = new FormData();
+      const filename = Date.now() + file.name;
+      data.append("img", filename);
+      data.append("file", file);
+      post.photo = filename;
+  
       try {
-        await axios.post(URL+"/api/upload",data)
+        await axios.post(URL + "/api/upload", data);
         // console.log(imageUpload.data)
-      }catch(err) {
+      } catch (err) {
         console.log(err);
       }
     }
-
-    //POST UPLOAD
-    // console.log(post)
-    if (selectedImage) {
-      post.photo = selectedImage.split("/uploads/")[1];
-    }
+  
     try {
-      const res = await axios.put(URL+"/api/posts/"+postId,post, {withCredentials:true})
+      const res = await axios.put(URL + "/api/posts/" + postId, post, { withCredentials: true });
       // console.log(res);
-      navigate("/posts/post/"+res.data._id)
-    }catch(err) {
+      navigate("/posts/post/" + res.data._id);
+    } catch (err) {
       console.log(err);
     }
-  }
+  };
+  
   return (
     <>
     <div className="flex items-center justify-between px-6 md:px-[200px] py-4">
@@ -119,7 +114,7 @@ const EditPost = () => {
           style={{ maxWidth: '20%', maxHeight: '400px' }}
         />
       )}
-      <input onChange={(e) => setTitle(e.target.value)} value={title} placeholder='Title' type='text' className="outline-none md:text-4xl text-3xl w-full px-4 py-2 h-full font-bold"/>
+      <input onChange={(e) => setTitle(e.target.value)} value={title} placeholder='Title' type='text' className="outline-none font-georama md:text-6xl text-3xl w-full px-4 py-2 h-full font-bold"/>
       
       <ReactQuill theme="bubble" className="w-full"  value={desc} onChange={setDesc} placeholder='Tell you Story....'/>
     </div>

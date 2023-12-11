@@ -15,6 +15,7 @@ import error404_2 from "../../../server/images/4042.png";
 import error404_3 from "../../../server/images/4043.png";
 import error404_4 from "../../../server/images/4046.png";
 import error404_5 from "../../../server/images/4045.png";
+import Modals from "../components/Modals"
 
 const errorImages = [
   error404,error404_1,error404_2,error404_3,error404_4,error404_5
@@ -117,7 +118,6 @@ const PostDetails = () => {
     <div>
       <Navbar />
       <div className="px-8 md:px-[300px] mt-14 font-saira relative">
-        {open && <div className="backdrop-filter backdrop-blur-md absolute inset-0 bg-black bg-opacity-50"></div>}
         <div className="flex justify-between items-center">
           <h1 className="text-2xl text-black md:text-[60px] leading-[1.25em] font-georama">{post?.title}</h1>
           {user?._id === post?.userId && (
@@ -132,17 +132,14 @@ const PostDetails = () => {
           )}
         </div>
         {open && (
-          <div className="bg-white transition-all duration-300 ease-in-out rounded w-[80%] md:w-[25%] p-5 gap-3 flex justify-center items-center flex-col absolute left-[50%] top-[10%] translate-x-[-50%] translate-y-[-50%] ">
-            <p className="text-center text-md">Are you sure? You want to Delete the post.</p>
-            <div className="flex gap-2">
-              <button className="bg-red-500 text-white px-4 py-2 rounded" onClick={handleDeletePost}>
-                Delete
-              </button>
-              <button className="bg-black text-white px-4 py-2 transition-all duration-300 ease-in-out  rounded" onClick={handleOpen}>
-                Cancel
-              </button>
-            </div>
-          </div>
+            <Modals
+                open={open}
+                setOpen={setOpen}
+                handleDeletePost={handleDeletePost}
+                title="Delete Post"
+                desc="Are you sure you want to delete this post?"
+            />         
+          
         )}
         <div className="flex items-center justify-between mt-2 md:mt-4">
           <p className="italic underline font-light text-sm">by {post?.username}</p>

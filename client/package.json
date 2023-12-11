@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.17",
     "axios": "^1.5.1",
     "quill-delta-to-plaintext": "^1.0.0",
     "react": "^18.2.0",
