@@ -51,7 +51,7 @@ const Home = () => {
         <h1 className="text-4xl mb-[1.5em] md:text-6xl font-fira font-light"><b className="font-bricolage">Hey, Craftingbugs here!</b> Discover new Stories and creative ideas.</h1>
         <div className="flex items-start justify-center gap-[50px] flex-col md:flex-row">
           <div className="flex-1 h-[500px] ">
-            <img src="https://images.pexels.com/photos/5185446/pexels-photo-5185446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" className="object-cover" />
+            <img src="https://images.pexels.com/photos/5185446/pexels-photo-5185446.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="home image" className="object-cover" />
           </div>
           <div className="px-4 flex-1 flex flex-col gap-[20px] ">
             <h1 className="text-3xl font-bold font-merriweather">Craftzblogs-<span className="font-merriweather font-light">Explore, Learn, Grow</span></h1>
@@ -69,7 +69,7 @@ This shorter introduction conveys the essence of your blog, inviting visitors to
         </div>
       </div>
       <h2 className="text-3xl text-center mb-[2em] md:mt-0 mt-[2em] font-semibold font-fira ">Recent Posts</h2>
-      <div className="px-8 md:px-[200px] min-h-[80vh] ">
+      <div className="px-8 md:px-[200px] min-h-[80vh] pb-8">
         {loader ? <div className="h-[40vh] flex justify-center items-center"><Loader /></div> : !noResults ? post.map((p) => (
           <>
             <Link to={user ? `/posts/post/${p._id}` : "/login"}>

@@ -91,7 +91,7 @@ const CreatePost = () => {
       <h1 className="text-2xl font-extrabold  font-bricolage"><Link to="/">CraftzBlogs</Link></h1>
       <button onClick={handleCreate} className={`${title === "" ? `disable opacity-50 cursor-not-allowed`:`opacity-100` } bg-teal-400 font-lato font-bold hover:shadow-md transition duration-300 text-white px-4 py-2 rounded-[10px] cursor-pointer`}>Publish</button>
     </div>
-    <div className="flex flex-col items-start md:px-[13em] px-4 py-[3em] gap-3 w-full ">
+    <div className="flex font-saira flex-col items-start md:px-[13em] px-4 py-[3em] gap-3 w-full ">
       <div className="flex items-center justify-center p-4 border border-[1px] rounded-[10px] cursor-pointer hover:bg-slate-800 hover:text-white transition duration-300 ease-in-out hover:shadow-md" >
         <input id="image" onChange={(e) => handleImageChange(e)} type="file" placeholder="Select image" style={{display:'none', cursor:'pointer'}} />
         <label htmlFor="image">
@@ -106,10 +106,10 @@ const CreatePost = () => {
           style={{ maxWidth: '20%', maxHeight: '400px' }}
         />
       )}
-      <input onChange={(e) => setTitle(e.target.value)} placeholder='Title' type='text' className="outline-none md:text-4xl text-3xl w-full px-4 py-2 h-full font-bold font-nunito"/>
+      <input onChange={(e) => setTitle(e.target.value)} placeholder='Title' type='text' className="outline-none md:text-6xl text-3xl w-full px-4 py-2 h-full font-bold font-georama"/>
       {/* <p className="font-fira">{file?.name}</p>
        */}
-      <ReactQuill theme="bubble" value={desc}  className="w-full border-none outline-0 text-xl"   placeholder='Tell your Story....' onChange={setDesc}/>
+      <ReactQuill theme="bubble" value={desc}  className="w-full border-none font-saira outline-0 text-xl"   placeholder='Tell your Story....' onChange={setDesc}/>
     </div>
     </>
   )

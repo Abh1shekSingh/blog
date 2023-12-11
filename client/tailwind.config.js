@@ -6,8 +6,8 @@ export default {
   ],
   theme: {
     fontFamily: {
-      'bricolage': ['Bricolage Grotesque','sans-serif'],
-      'fira':['Fira Sans Condensed', 'sans-serif'],
+      'georama': ['Georama','sans-serif'],
+      'saira':['Saira', 'sans-serif'],
       'nunito':['Nunito Sans', 'sans-serif']
     },
     extend: {},
